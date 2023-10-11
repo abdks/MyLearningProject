@@ -1,0 +1,83 @@
+﻿@model  List<MyLearningProject.DAL.Entities.Process>
+@{
+    Layout = "~/Views/StudentLayout/Index.cshtml";
+    int count = 0;
+}
+
+@*<h5>Kurs Listeniz</h5>
+ @foreach (var item in Model)
+ {
+     count++;
+
+     <p>@count   -@item.Course.Title</p>
+ }*@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şık Tablo Tasarımı</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Sıra</th>
+                <th>Kurs Adı</th>
+            
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model)
+            {
+                count++;
+                <tr>
+                    <td>@count</td>
+                    <td>@x.Course.Title</td>
+
+                </tr>
+
+            }
+         
+        </tbody>
+    </table>
+</body>
+</html>

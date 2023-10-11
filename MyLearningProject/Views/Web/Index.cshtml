@@ -1,0 +1,50 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+@Html.Action("PartialNavbar","Web")
+@Html.Action("PartialHead","Web")
+
+<body>
+    
+  @Html.Action("PartialSpinner","Web")
+  
+
+   
+    @Html.Action("PartialSpinner","Web")
+    
+    <!-- Carousel Start -->
+    @Html.Action("PartialCarousel","Web")
+    <!-- Carousel End -->
+    <!-- Service Start -->
+    @Html.Action("PartialServices", "About")
+    <!-- Service End -->
+    <!-- About Start -->
+    @Html.Action("PartialAbout","About")
+    <!-- About End -->
+    <!-- Categories Start -->
+    @Html.Action("PartialCategories", "CoursePage")
+    <!-- Categories Start -->
+    <!-- Courses Start -->
+    @Html.Action("PartialCourses", "Web") 
+    <!-- Courses End -->
+    <!-- Team Start -->
+    @Html.Action("PartialTestimonial", "About")
+    <!-- Team End -->
+    <!-- Testimonial Start -->
+    @Html.Action("PartialTestimonial","Web")
+    <!-- Testimonial End -->
+    <!-- Footer Start -->
+    @Html.Action("PartialFooter", "Web")
+    <!-- Footer End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+@Html.Action("PartialScript","Web")
+</body>
+
+</html>

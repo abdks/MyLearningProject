@@ -1,0 +1,41 @@
+﻿@model List<MyLearningProject.DAL.Entities.Testimonial>
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="text-center">
+            <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
+            <h1 class="mb-5">Our Students Say!</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel position-relative">
+          @{ 
+              int a = 1;
+          }
+            @foreach (var x in Model)
+            {
+                if (a <= 5)
+                {
+                <div class="testimonial-item text-center">
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="@x.ImageUrl" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">@x.NameSurname</h5>
+                    <p>@x.Title</p>
+                    <div class="testimonial-text bg-light text-center p-4">
+                        <p class="mb-0">@((x.Comment.Length > 250) ? x.Comment.Substring(0, 250) : x.Comment)</p>
+                        @if (x.Comment.Length > 250)
+                        {
+                            <p class="text-muted">... <a href="#">Daha fazla oku</a></p>
+                        }
+                    </div>
+                </div>
+                }
+                else
+                {
+                    break;
+                }
+                a++;
+            }
+
+
+
+
+        </div>
+    </div>
+</div>

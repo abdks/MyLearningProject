@@ -1,0 +1,33 @@
+﻿@model MyLearningProject.DAL.Entities.Instructor
+
+@{
+    ViewBag.Title = "AddInstructors";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<h2>Yeni Eğitmen Ekleme Sayfası</h2>
+
+<form method="post">
+    <br />
+
+    <label>Eğitmen Adını Giriniz</label>
+    <input type="text" name="Name" class="form-control" />
+    <br />
+    <label>Eğitmen Soyadını Giriniz</label>
+    <input type="text" name="Surname" class="form-control" />
+    <br />
+    <label>Eğitmen Görselini Giriniz</label>
+    <input type="text" name="ImageUrl" class="form-control" />
+    <label>Eğitmen Facebook Adresini Giriniz</label>
+    <input type="text" name="Facebook" class="form-control" />
+    <br />
+    <label>Eğitmen İnstagram Adresini Giriniz</label>
+    <input type="text" name="Instagram" class="form-control" />
+    <br />
+    <label>Eğitmen Twitter Adresini Giriniz</label>
+    <input type="text" name="Twitter" class="form-control" />
+    <br />
+    <br /><br />
+    <button class="btn btn-primary">Eğitmeni Kaydet</button>
+</form>

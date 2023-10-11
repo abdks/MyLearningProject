@@ -1,0 +1,42 @@
+﻿@model MyLearningProject.DAL.Entities.ContactAdmin
+
+@{
+    ViewBag.Title = "AddContactAdmin";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<h2>Yeni İletişim Ekleme Sayfası</h2>
+
+<form method="post">
+    <br />
+
+    <label>İletişim Başlığını Giriniz</label>
+    <input type="text" name="ContactTitle" class="form-control" />
+    <br />
+    <label>İletişim Açıklaması</label>
+    <input type="text" name="ContactDescription" class="form-control" />
+    <br />
+    <label>İletişim Adresi</label>
+    <input type="text" name="ContactAdress" class="form-control" />
+    <label>İletişim Numarası</label>
+    <input type="tel" name="ContactPhone" class="form-control" />
+    <br />
+    <label>Twitter</label>
+    <input type="text" name="ContactTwitter" class="form-control" />
+    <br />
+    <label>Facebook</label>
+    <input type="text" name="ContactFacebook" class="form-control" />
+    <br />
+    <label>Youtube</label>
+    <input type="text" name="ContactYoutube" class="form-control" />
+    <br />
+    <label>Linkedin</label>
+    <input type="text" name="ContactLinkedin" class="form-control" />
+    <br />
+    <label>İletişim Maili</label>
+    <input type="text" name="ContactMail" class="form-control" />
+    <br />
+    <br /><br />
+    <button class="btn btn-primary">Sayfayı Kaydet</button>
+</form>

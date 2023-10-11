@@ -1,0 +1,38 @@
+﻿@model MyLearningProject.DAL.Entities.ContactAdmin
+
+@{
+    ViewBag.Title = "UpdateContactAdmin";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Eğitmen Güncelleme Sayfası</h2>
+
+<form method="post">
+    <br />
+    <input type="hidden" name="ContactId" value="@Model.ContactID" />
+    <label>İletişim Başlığı</label>
+    <input type="text" name="ContactTitle" value="@Model.ContactTitle" class="form-control" />
+    <br />
+    <label>İletişim Açıklaması</label>
+    <input type="text" name="ContactDescription" value="@Model.ContactDescription" class="form-control" />
+    <br />
+    <label>İletişim Adresi</label>
+    <input type="text" name="ContactAdress" value="@Model.ContactAdress" class="form-control" />
+    <br />
+    <label>İletişim Numarası</label>
+    <input type="text" name="ContactPhone" value="@Model.ContactPhone" class="form-control" />
+    <br />
+    <label>İletişim Maili</label>
+    <input type="text" name="ContactMail" value="@Model.ContactMail" class="form-control" />
+    <label>Twitter</label>
+    <input type="text" name="ContactTwitter" value="@Model.ContactTwitter" class="form-control" />
+    <label>Facebook</label>
+    <input type="text" name="ContactFacebook" value="@Model.ContactFacebook" class="form-control" />
+    <label>Youtube</label>
+    <input type="text" name="ContactYoutube" value="@Model.ContactYoutube" class="form-control" />
+    <label>Linkedin</label>
+    <input type="text" name="ContactLinkedin" value="@Model.ContactLinkedin" class="form-control" />
+    <br />
+    <br />
+    <button class="btn btn-primary">İletişim Sayfasını Güncelle</button>
+</form>

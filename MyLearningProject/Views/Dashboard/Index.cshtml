@@ -1,0 +1,275 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Templates</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            width: 100%;
+            margin-top: 20px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .card-container {
+            width: 66.66%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            width: calc(33.33% - 20px);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+            .card:hover {
+                transform: translateY(-5px);
+            }
+
+        .card1 {
+            background-color: #EBD18D; /* İlk kartın arka plan rengi */
+        }
+
+        .card2 {
+            background-color: #FF5733; /* İkinci kartın arka plan rengi */
+        }
+
+        .card3 {
+            background-color: #5BC0EB; /* Üçüncü kartın arka plan rengi */
+        }
+
+        .card4 {
+            background-color: #6B4226; /* Dördüncü kartın arka plan rengi */
+        }
+
+        .card5 {
+            background-color: #45AAB8; /* Beşinci kartın arka plan rengi */
+        }
+
+        .card6 {
+            background-color: #F0C143; /* Altıncı kartın arka plan rengi */
+        }
+
+        .card__wrapper {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card__score {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 500;
+            font-size: 16px;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            background: #000; /* Kartın başlık rengi */
+        }
+
+        .card__acounts {
+            width: 42px;
+            height: 42px;
+        }
+
+        .card__menu {
+            width: 40px;
+            height: 40px;
+            background: #F6DB96;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .card__title {
+            margin-top: 0px;
+            font-weight: 900;
+            font-size: 25px;
+            color: #000; /* Kartın başlık rengi */
+        }
+
+        .card__indicator {
+            margin-top: 15px;
+            font-weight: 500;
+            font-size: 14px;
+            color: #000; /* Kartın başlık rengi */
+        }
+
+        .card__progress progress {
+            width: 100%;
+            height: 4px;
+            border-radius: 100px;
+        }
+
+            .card__progress progress::-webkit-progress-bar {
+                background-color: #00000030;
+                border-radius: 100px;
+            }
+
+            .card__progress progress::-webkit-progress-value {
+                background-color: #000; /* İlerleme çubuğunun rengi */
+                border-radius: 100px;
+            }
+
+        table {
+/*            width: 33.33%;
+*/
+            width: 35%;
+            margin-left: 0px;
+            margin-right: 0px;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card-container">
+            <div class="card card1">
+                <div class="card__wrapper">
+                    <div class="card__title">
+                        Web Design templates Selection
+                    </div>
+                </div>
+                <div class="card__indicator"><span class="card__indicator-amount">135</span> Works / <span class="card__indicator-percentage">45%</span></div>
+                <div class="card__progress"><progress max="100" value="40"></progress></div>
+            </div>
+
+            <div class="card card2">
+                <div class="card__wrapper">
+                    <div class="card__title">
+                        Web Design templates Selection
+                    </div>
+                </div>
+                <div class="card__indicator"><span class="card__indicator-amount">135</span> Works / <span class="card__indicator-percentage">45%</span></div>
+                <div class="card__progress"><progress max="100" value="40"></progress></div>
+            </div>
+
+            <div class="card card3">
+                <div class="card__wrapper">
+                    <div class="card__title">
+                        Web Design templates Selection
+                    </div>
+                </div>
+                <div class="card__indicator"><span class="card__indicator-amount">135</span> Works / <span class="card__indicator-percentage">45%</span></div>
+                <div class="card__progress"><progress max="100" value="40"></progress></div>
+            </div>
+
+            <div class="card card4">
+                <div class="card__wrapper">
+                    <div class="card__title">
+                        Web Design templates Selection
+                    </div>
+                </div>
+                <div class="card__indicator"><span class="card__indicator-amount">135</span> Works / <span class="card__indicator-percentage">45%</span></div>
+                <div class="card__progress"><progress max="100" value="40"></progress></div>
+            </div>
+
+            <div class="card card5">
+                <div class="card__wrapper">
+                    <div class="card__title">
+                        Web Design templates Selection
+                    </div>
+                </div>
+                <div class="card__indicator"><span class="card__indicator-amount">135</span> Works / <span class="card__indicator-percentage">45%</span></div>
+                <div class="card__progress"><progress max="100" value="40"></progress></div>
+            </div>
+
+            <div class="card card6">
+                <div class="card__wrapper">
+                    <div class="card__title">
+                        Web Design templates Selection
+                    </div>
+                </div>
+                <div class="card__indicator"><span class="card__indicator-amount">135</span> Works / <span class="card__indicator-percentage">45%</span></div>
+                <div class="card__progress"><progress max="100" value="40"></progress></div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Yorumu Yapan</th>
+                    <th>Yorum</th>
+                    <th>Kurs</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Veri 1</td>
+                    <td>Veri 2</td>
+                    <td>Veri 3</td>
+                </tr>
+                <tr>
+                    <td>Veri 1</td>
+                    <td>Veri 2</td>
+                    <td>Veri 3</td>
+                </tr>
+                <tr>
+                    <td>Veri 1</td>
+                    <td>Veri 2</td>
+                    <td>Veri 3</td>
+                </tr>
+                <tr>
+                    <td>Veri 1</td>
+                    <td>Veri 2</td>
+                    <td>Veri 3</td>
+                </tr>
+                <tr>
+                    <td>Veri 1</td>
+                    <td>Veri 2</td>
+                    <td>Veri 3</td>
+                </tr>
+      
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

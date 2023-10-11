@@ -1,0 +1,28 @@
+﻿@model MyLearningProject.DAL.Entities.Service
+
+@{
+    ViewBag.Title = "UpdateAbout";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Hizmet Güncelleme Sayfası</h2>
+
+<form method="post">
+    <br />
+    <input type="hidden" name="ServiceID" value="@Model.ServiceID" />
+    <label>Hizmet Başlığı</label>
+    <input type="text" name="ServiceTitle" value="@Model.ServiceTitle" class="form-control" />
+    <br />
+    <label>Hizmet Açıklaması</label>
+    <input type="text" name="ServiceDescription" value="@Model.ServiceDescription" class="form-control" />
+    <br />
+
+
+
+
+    <br />
+
+    <button class="btn btn-primary">Hizmeti Güncelle</button>
+</form>
+
+

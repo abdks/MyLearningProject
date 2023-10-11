@@ -1,0 +1,292 @@
+﻿@model MyLearningProject.DAL.Entities.CourseViewModel
+
+@{
+    Layout = null;
+}
+
+
+
+
+@Html.Action("PartialHead", "About");
+
+
+@Html.Action("PartialNavbar", "About")
+
+@if (ViewBag.IsCourseOwned)
+{
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .star {
+            font-size: 30px;
+            cursor: pointer;
+            color: #ffcc00; /* Sarı renk */
+            transition: color 0.3s;
+        }
+
+            .star:hover {
+                color: #ffea00; /* Hover olduğunda sarı tonunu değiştirin */
+            }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 28px;
+        }
+
+        h3 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.6;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        #Comments {
+            margin-top: 30px;
+        }
+
+        .comment {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #f9f9f9;
+            border: 2px solid #4BCEDA;
+        }
+
+        #CommentForm {
+            margin-top: 30px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 2px solid #4BCEDA;
+        }
+
+        .courses {
+            margin-top: 30px;
+        }
+
+        .courses-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .course-item {
+            width: calc(33.33% - 20px); /* 3 sütunlu ve aralarında 20px boşluk bırak */
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .course-img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .course-button {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .course-item:hover .course-img {
+            transform: scale(1.1); /* Resmi büyütme efekti */
+        }
+
+        .course-item:hover .course-button {
+            display: block; /* Butonu görünür yapma */
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #4BCEDA;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 5px solid #4BCEDA;
+        }
+
+            .btn:hover {
+                background-color: #555;
+            }
+
+        h1 {
+            font-size: 28px;
+            color: #4BCEDA;
+        }
+
+        h3 {
+            font-size: 28px;
+            color: #4BCEDA;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #4BCEDA;
+        }
+
+        .video-info-container {
+            display: flex;
+            align-items: flex-start; /* İçeriği yukarı hizala */
+        }
+
+        .video-container {
+            flex: 1; /* Videonun genişliği */
+            margin-right: 20px;
+        }
+
+        .info-box {
+            width: 1060px; /* Kutu genişliği */
+            height: 315px; /* Kutu yüksekliği */
+            padding: 20px;
+            color: #fff;
+            border: 5px solid #4BCEDA;
+        }
+    </style>
+
+    <body>
+
+        <div class="container">
+            <img src="https://i.pinimg.com/originals/18/07/d2/1807d2ea5849293f17cd94aaf9a88e06.png" alt="Course Image" style="width: 100%; max-width: 500px; height: auto; float: right; margin-left: 20px;" />
+            <h3>@Model.Course.Title</h3>
+
+            <p>
+                @Model.Course.Description
+            </p>
+            <br /><br />
+            <!--VİDEO-->
+            <div class="video-info-container">
+                <div class="video-container">
+                    <iframe width="800" height="515" src="@Model.Course.Video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="info-box">
+                    <h2 style="text-align:center">Kurs Bilgileri</h2><br />
+                    <p style="color:black;">Kurs Eğitmeni : @Model.Course.Instructor.Name @Model.Course.Instructor.Surname</p>
+                    <p style="color:black;">Kurs Süresi : @Model.Course.Duration </p>
+                    <p style="color:black;">Kurs Fiyatı : @Model.Course.Price </p>
+                    <p style="color:black;">Kurs Kategorisi : @Model.Course.Category.CategoryName</p>
+                </div>
+            </div>
+
+
+
+            <!--VİDEO BİTİŞ-->
+
+
+
+
+            <div id="Comments">
+                <h2>Yorumlar</h2>
+                @foreach (var x in Model.Comments)
+                {
+            <div class="comment">
+                <p>Yorumu Yapan: <strong>@x.Student.Name @x.Student.Surname</strong> Tarih: <strong>@x.CommentDate.ToString("dd.MM.yyyy")</strong> Yorum Puanı : <strong>@x.Value</strong></p>
+              
+                <p>Yorum : <strong>@x.CommentText</strong></p>
+
+            </div>
+                }
+
+            </div>
+            <form action="@Url.Action("AddComment", "CourseDetail", new { courseId = Model.Course.CourseID })" method="post">
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    <label for="comment">Yorumunuz:</label>
+                    <textarea id="comment" name="commentText" class="form-control" rows="4" required></textarea>
+                </div>
+                <div class="rating">
+                    <label style="font-size: large">Puanınız: <span id="selectedRating">0</span></label>
+                    <div id="stars">
+                        <span class="star" data-rating="1">&#9733;</span>
+                        <span class="star" data-rating="2">&#9733;</span>
+                        <span class="star" data-rating="3">&#9733;</span>
+                        <span class="star" data-rating="4">&#9733;</span>
+                        <span class="star" data-rating="5">&#9733;</span>
+                    </div>
+                    <input type="hidden" id="rating" name="rating" value="0" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Yorumu Gönder</button>
+            </form>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+            <script>
+                $(document).ready(function () {
+                    var stars = $(".star");
+                    var selectedRating = $("#selectedRating");
+                    var ratingInput = $("#rating");
+
+                    stars.click(function () {
+                        var rating = $(this).data("rating");
+                        selectedRating.text(rating); // Seçilen puanı göster
+                        ratingInput.val(rating); // Gizli alana değeri atama
+                    });
+                });
+
+            </script>
+
+
+            <div class="courses">
+                <h2>En Son Kurslar</h2>
+                <div class="courses-container">
+                    <div class="course-item">
+                        <img class="course-img" src="https://i.pinimg.com/originals/18/07/d2/1807d2ea5849293f17cd94aaf9a88e06.png" alt="Course 1" />
+                        <button class="course-button btn">Daha Fazla Bilgi</button>
+                    </div>
+                    <div class="course-item">
+                        <img class="course-img" src="https://i.pinimg.com/originals/18/07/d2/1807d2ea5849293f17cd94aaf9a88e06.png" alt="Course 2" />
+                        <button class="course-button btn">Daha Fazla Bilgi</button>
+                    </div>
+                    <div class="course-item">
+                        <img class="course-img" src="https://i.pinimg.com/originals/18/07/d2/1807d2ea5849293f17cd94aaf9a88e06.png" alt="Course 3" />
+                        <button class="course-button btn">Daha Fazla Bilgi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </body>
+
+
+}
+else
+{
+    <h3>Kursa sahip değilsin</h3>
+}
+
+
+
+
+
+
+
+<!-- Footer End -->
+<!-- Back to Top -->
+<!-- JavaScript Libraries -->
+@Html.Action("PartialScript", "About")

@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@Html.Action("PartialHead","Contact")
+
+<body>
+
+    <!-- Navbar Start -->
+    @Html.Action("PartialNavbar", "Contact")
+    <!-- Navbar End -->
+    <!-- Header Start -->
+    @Html.Action("PartialHeader", "Contact")
+    <!-- Header End -->
+    <!-- Contact Start -->
+    @Html.Action("PartialContact", "Contact")
+
+    <!-- Contact End -->
+    <!-- Footer Start -->
+    @Html.Action("PartialFooter", "Web")
+    <!-- Footer End -->
+    @Html.Action("PartialScript", "Contact")
+
+</body>
+
+</html>

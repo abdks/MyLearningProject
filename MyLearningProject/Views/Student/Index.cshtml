@@ -1,0 +1,74 @@
+﻿@model List<MyLearningProject.DAL.Entities.Student>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+<div class="row page-titles">
+    <div class="col-md-5 col-8 align-self-center">
+        <h3 class="text-themecolor m-b-0 m-t-0">Dashboard</h3>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Anasayfa</a></li>
+            <li class="breadcrumb-item active">@ViewBag.SayfaBasligi</li>
+        </ol>
+    </div>
+    <div class="col-md-7 col-4 align-self-center">
+        <a href="#" class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down">Raporları İndir</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-block">
+                Öğrenci Listesi
+                <br />
+                <table class="table table-bordered">
+                    <tr>
+                        <th>#</th>
+                        <th>Adı Soyadı</th>
+                        <th>Resimi</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                        <th>Kurslar</th>
+
+                    </tr>
+                    @{
+                        int a = 0; // Veri sayacını sıfıra ayarla
+                    }
+
+                    @if (Model.Any()) // Model içinde veri varsa
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.StudentID</td>
+                                <td>@item.Name @item.Surname</td>
+                                <td><img src="@item.Img" alt="Alternate Text" /></td>
+                                <td><a href="/Student/DeleteStudent/@item.StudentID" class="btn btn-outline-danger">Sil</a></td>
+                                <td><a href="/Student/UpdateStudents/@item.StudentID" class="btn btn-outline-success">Güncelle</a></td>
+                                <td><a href="/Student/UpdateStudent/@item.StudentID" class="btn btn-outline-success">Kurslar</a></td>
+                            </tr>
+                            a++;
+                        }
+                    }
+                    else // Model içinde veri yoksa
+                    {
+
+                        <br />
+                        <div class="alert alert-danger">
+                            <h4 class="alert-heading">Dikkat!</h4>
+                            <p>Hiç Veri Bulunamadı</p>
+                        </div>
+                    }
+
+
+
+                </table>
+                <a href="/Student/AddStudent" class="btn btn-outline-primary">Yeni Öğrenci Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>

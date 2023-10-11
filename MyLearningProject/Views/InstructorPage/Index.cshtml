@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+@Html.Action("PartialHead", "InstructorPage")
+
+<body>
+
+    @Html.Action("PartialNavbar", "InstructorPage")
+    <!-- Navbar End -->
+    <!-- Header Start -->
+    @Html.Action("PartialHeader", "InstructorPage")
+    <!-- Header End -->
+    <!-- Team Start -->
+    @Html.Action("PartialInstructor", "InstructorPage")
+    <!-- Team End -->
+    <!-- Footer Start -->
+    @Html.Action("PartialFooter","Web")
+    <!-- Footer End -->
+    <!-- Back to Top -->
+   @Html.Action("PartialScript","InstructorPage")
+</body>
+
+</html>

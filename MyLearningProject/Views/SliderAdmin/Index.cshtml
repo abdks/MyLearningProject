@@ -1,0 +1,78 @@
+﻿@model List<MyLearningProject.DAL.Entities.Slider>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row page-titles">
+    <div class="col-md-5 col-8 align-self-center">
+        <h3 class="text-themecolor m-b-0 m-t-0">Dashboard</h3>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Anasayfa</a></li>
+            <li class="breadcrumb-item active">@ViewBag.SayfaBasligi</li>
+        </ol>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-block">
+                Slider Sayfası
+                <br />
+                <label>Resim Boyutu 1900x800 Olmalıdır</label>
+                <br />
+                <div class="table-responsive">
+                    <!-- Tabloya responsive sınıf ekledik -->
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Birinci Slider Başlığı</th>
+                                <th>İkinci Slider Başlığı</th>
+                                <th>Slider Açıklaması</th>
+                                <th>Slider Resimi</th>
+                                <th>Sil</th>
+                                <th>Güncelle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.Any())
+                            {
+                                int a = 0;
+                                foreach (var item in Model)
+                                {
+                            <tr>
+                                <td>@item.SliderID</td>
+                                <td>@item.SliderTitle1</td>
+                                <td>@item.SliderTitle2</td>
+                                <td>@item.SliderDescription</td>
+                                <td><img src="@item.SliderİmageUrl" style="height:70px;width:50px; border-radius:50%" /></td>
+
+                                <td><a href="/SliderAdmin/DeleteSlider/@item.SliderID" class="btn btn-outline-danger">Sil</a></td>
+                                <td><a href="/SliderAdmin/UpdateSlider/@item.SliderID" class="btn btn-outline-success">Güncelle</a></td>
+                            </tr>
+                                    a++;
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="12">
+                                        <div class="alert alert-danger">
+                                            <h4 class="alert-heading">Dikkat!</h4>
+                                            <p>Hiç Veri Bulunamadı</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <a href="/SliderAdmin/AddSlider" class="btn btn-outline-primary">Yeni Slider Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>

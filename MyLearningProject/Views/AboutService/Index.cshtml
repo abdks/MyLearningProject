@@ -1,0 +1,82 @@
+﻿@model List<MyLearningProject.DAL.Entities.Service>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row page-titles">
+    <div class="col-md-5 col-8 align-self-center">
+        <h3 class="text-themecolor m-b-0 m-t-0">Dashboard</h3>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Anasayfa</a></li>
+            <li class="breadcrumb-item active">@ViewBag.SayfaBasligi</li>
+        </ol>
+    </div>
+    <div class="col-md-7 col-4 align-self-center">
+        <a href="#" class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down">Raporları İndir</a>
+    </div>
+</div>
+
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-block">
+                Hakkında Sayfası Hizmetler Bölümü
+                <div class="w3-panel w3-pale-red w3-border">
+                    <h3>Dikkat!</h3>
+                    <p>Maksimum 4 tane servis ekleyebilirsiniz.Veya 8 tane ekleyebilirsiniz</p>
+                </div>
+                <br />
+                <table class="table table-bordered">
+                    <tr>
+                        <th>#</th>
+                        <th>Hizmet Başlığı</th>
+                        <th>Hizmet Açıklaması</th>
+
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+
+                    </tr>
+                    @{
+                        int a = 0; // Veri sayacını sıfıra ayarla
+                    }
+
+                    @if (Model.Any()) // Model içinde veri varsa
+                    {
+
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.ServiceID</td>
+                                <td>@item.ServiceTitle</td>
+                                <td>@item.ServiceDescription</td>
+
+
+                                <td><a href="/AboutService/DeleteService/@item.ServiceID" class="btn btn-outline-danger">Sil</a></td>
+                                <td><a href="/AboutService/UpdateService/@item.ServiceID" class="btn btn-outline-success">Güncelle</a></td>
+                            </tr>
+                            a++;
+                        }
+                    }
+                    else // Model içinde veri yoksa
+                    {
+
+                        <br />
+                        <div class="alert alert-danger">
+                            <h4 class="alert-heading">Dikkat!</h4>
+                            <p>Hiç Veri Bulunamadı</p>
+                        </div>
+                    }
+
+                </table>
+                <a href="/AboutService/AddService" class="btn btn-outline-primary">Yeni Hizmet Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>
+

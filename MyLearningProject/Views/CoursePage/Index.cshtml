@@ -1,0 +1,34 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+@Html.Action("PartialHead", "CoursePage")
+
+<body>
+
+    <!-- Navbar Start -->
+    @Html.Action("PartialNavbar", "CoursePage")
+    <!-- Navbar End -->
+    <!-- Header Start -->
+    @Html.Action("PartialHeader", "CoursePage")
+    <!-- Header End -->
+    <!-- Categories Start -->
+    @Html.Action("PartialCategories", "CoursePage")
+    <!-- Categories Start -->
+    <!-- Courses Start -->
+    @Html.Action("PartialCourse", "CoursePage")
+    @*@Html.Action("PartialCourses", "Web")*@
+
+
+    <!-- Courses End -->
+    <!-- Footer Start -->
+    @Html.Action("PartialFooter", "Web")
+    <!-- Footer End -->
+    <!-- Back to Top -->
+    @Html.Action("PartialLibrary", "CoursePage")
+</body>
+
+</html>

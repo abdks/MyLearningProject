@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "profile";
+    Layout = "~/Views/InstructorLayout/Index.cshtml";
+}
+@model MyLearningProject.DAL.Entities.Instructor
+
+<div class="tab-pane active" id="profile" role="tabpanel">
+    <div class="card-block">
+        <div class="profiletimeline">
+            <h2>Profilim</h2>
+            <form method="post">
+                <label>Adınız</label><br />
+                @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })<br />
+
+                <label>Soyadınız</label><br />
+                @Html.TextBoxFor(model => model.Surname, new { @class = "form-control" })<br />
+
+                <label>Resiminiz</label><br />
+                @Html.TextBoxFor(model => model.ImageUrl, new { @class = "form-control" })<br />
+
+                <label>İnstragramınız</label><br />
+                @Html.TextBoxFor(model => model.Instagram, new { @class = "form-control" })<br />
+
+                <label>Facebookunuz</label><br />
+                @Html.TextBoxFor(model => model.Facebook, new { @class = "form-control" })<br />
+
+                <label>Twitterınız</label><br />
+                @Html.TextBoxFor(model => model.Twitter, new { @class = "form-control" })<br />
+
+                <label>Başlığınız</label><br />
+                @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })<br />
+
+                <label>Profil Resiminiz</label><br />
+                @Html.TextBoxFor(model => model.ProfileImage, new { @class = "form-control" })<br />
+
+                <label>Arka Planınız</label><br />
+                @Html.TextBoxFor(model => model.CoverImage, new { @class = "form-control" })<br />
+
+                <label>Emailiniz</label><br />
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })<br />
+
+                <label>Şifreniz</label><br />
+                @Html.TextBoxFor(model => model.Password, new { @class = "form-control" })<br />
+
+                <button class="btn btn-primary">Güncelle</button>
+            </form>
+        </div>
+    </div>
+</div>

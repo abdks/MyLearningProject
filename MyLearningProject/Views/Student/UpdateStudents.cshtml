@@ -1,0 +1,25 @@
+﻿@model MyLearningProject.DAL.Entities.Student
+
+@{
+    ViewBag.Title = "UpdateStudents";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Öğrenci Güncelleme Sayfası</h2>
+
+<form method="post">
+    <input type="hidden" name="StudentID" value="@Model.StudentID" />
+    <label>Öğrenci Adı</label>
+    <input type="text" name="Name" value="@Model.Name" class="form-control" required />
+    <label>Öğrenci Soyadı</label>
+    <input type="text" name="Surname" value="@Model.Surname" class="form-control" required />
+    <label>Öğrenci Maili</label>
+    <input type="email" name="Email" value="@Model.Email" class="form-control" required />
+    <label>Öğrenci Resimi</label>
+    <input type="text" name="Img" value="@Model.Img" class="form-control" required />
+    <label>Öğrenci Şifresi</label>
+    <input type="password" name="Password" value="@Model.Password" class="form-control" required />
+    <br /><br />
+    <button class="btn btn-primary">Öğrenciyi Güncelle</button>
+</form>
+

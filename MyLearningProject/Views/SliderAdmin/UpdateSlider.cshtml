@@ -1,0 +1,29 @@
+﻿@model MyLearningProject.DAL.Entities.Slider
+
+@{
+    ViewBag.Title = "UpdateContactAdmin";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Slider Güncelleme Sayfası</h2>
+
+<form method="post">
+    <br />
+    <input type="hidden" name="SliderID" value="@Model.SliderID" />
+    <label>Birinci Slider Başlığı</label>
+    <input type="text" name="SliderTitle1" value="@Model.SliderTitle1" class="form-control" />
+    <br />
+    <label>İkinci Slider Başlığı</label>
+    <input type="text" name="SliderTitle2" value="@Model.SliderTitle2" class="form-control" />
+    <br />
+    <label>Slider Açıklaması</label>
+    <input type="text" name="SliderDescription" value="@Model.SliderDescription" class="form-control" />
+    <br />
+    <label>Slider Resimi</label>
+    <input type="text" name="SliderİmageUrl" value="@Model.SliderİmageUrl" class="form-control" />
+    <br />
+  
+    <br />
+    <button class="btn btn-primary">Sliderı Güncelle</button>
+</form>
+

@@ -1,0 +1,78 @@
+﻿@model List<MyLearningProject.DAL.Entities.Testimonial>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+<div class="row page-titles">
+    <div class="col-md-5 col-8 align-self-center">
+        <h3 class="text-themecolor m-b-0 m-t-0">Dashboard</h3>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Anasayfa</a></li>
+            <li class="breadcrumb-item active">@ViewBag.SayfaBasligi</li>
+        </ol>
+    </div>
+    <div class="col-md-7 col-4 align-self-center">
+        <a href="#" class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down">Raporları İndir</a>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-block">
+                Referans Listesi
+                <br />
+                <table class="table table-bordered">
+                    <tr>
+                        <th>#</th>
+                        <th>Referans Adı Soyadı</th>
+
+                        <th>Referans Başlığı</th>
+                        <th>Referans Resimi</th>
+                        <th>Referans Açıklaması</th>
+                        <th>Referans Statüsü</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                    </tr>
+                    @{
+                        int a = 0; // Veri sayacını sıfıra ayarla
+                    }
+
+                    @if (Model.Any()) // Model içinde veri varsa
+                    {
+                        foreach (var item in Model)
+                        {
+
+                            <tr>
+                                <td>@item.TestimonialID</td>
+                                <td>@item.NameSurname</td>
+                                <td>@item.Title</td>
+                                <td><img src="@item.ImageUrl" style="height:70px;width:50px; border-radius:50%" /></td>
+                                <td>@item.Comment</td>
+                                <td>@item.Status</td>
+                                <td><a href="/Testimonial/DeleteTestimonial/@item.TestimonialID" class="btn btn-outline-danger">Sil</a></td>
+                                <td><a href="/Testimonial/UpdateTestimonial/@item.TestimonialID" class="btn btn-outline-success">Güncelle</a></td>
+                            </tr>
+
+                        }
+                    }
+                    else // Model içinde veri yoksa
+                    {
+
+                        <br />
+                        <div class="alert alert-danger">
+                            <h4 class="alert-heading">Dikkat!</h4>
+                            <p>Hiç Veri Bulunamadı</p>
+                        </div>
+                    }
+
+                </table>
+                <a href="/Testimonial/AddTestimonial" class="btn btn-outline-primary">Yeni Referans Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+﻿
+@model MyLearningProject.DAL.Entities.Service
+
+@{
+    ViewBag.Title = "AddService";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<h2>Yeni Hizmet Ekleme Sayfası</h2>
+
+<form method="post">
+    <br />
+
+    <label>Hizmet Başlığı Giriniz</label>
+    <input type="text" name="ServiceTitle" class="form-control" />
+    <br />
+    <label>Hizmet Açıklaması Giriniz</label>
+    <input type="text" name="ServiceDescription" class="form-control" />
+    <br />
+    
+  
+
+    <br />
+    <button class="btn btn-primary">Hizmeti Kaydet</button>
+</form>
+

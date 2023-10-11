@@ -1,0 +1,29 @@
+﻿@model MyLearningProject.DAL.Entities.Instructor
+
+@{
+    ViewBag.Title = "AddInstructors";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<h2>Yeni Hakkında Öğesi Ekleme Sayfası</h2>
+
+<form method="post">
+    <br />
+
+    <label>Hakkında Sayfası Başlığı Giriniz</label>
+    <input type="text" name="AboutTitle" class="form-control" />
+    <br />
+    <label>Hakkında Sayfası Açıklamasını Giriniz</label>
+    <input type="text" name="AboutParagraph" class="form-control" />
+    <br />
+    <label>Hakkında Sayfası Hizmeti Giriniz</label>
+    <input type="text" name="AboutService" class="form-control" />
+    <label>Hakkında Sayfası Resimi Giriniz</label>
+    <input type="text" name="AboutImage" class="form-control" />
+    <br />
+    
+    <br />
+    <button class="btn btn-primary">Hakkında Sayfasını Kaydet</button>
+</form>
+

@@ -1,0 +1,71 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+@Html.Action("PartialHead", "CoursePage")
+
+<body>
+
+    <!-- Navbar Start -->
+    @Html.Action("PartialNavbar", "CoursePage")
+    <!-- Navbar End -->
+    <!-- Header Start -->
+    <div class="container-xxl py-5 center">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <a href="/Login/Index"><i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i></a>
+                            <h5 class="mb-3"><a href="/Login/Index">Öğrenci Girişi</a></h5>
+                            <p><a href="/Login/Index">Öğrencilerimiz Buradan Giriş Yapabilir</a>
+                                
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <a href="/LoginInstructor/Index">
+                                <i class="fa fa-3x fa-globe text-primary mb-4"></i>
+                            </a>
+                            <a href="/LoginInstructor/Index">
+                                <h5 class="mb-3">Eğitmen Girişi</h5>
+                            </a>
+                            <a href="/LoginInstructor/Index">
+                                <p>Eğitmenlerimiz Buradan Giriş Yapabilir</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <a href="/LoginAdmin/Index">  <i class="fa fa-3x fa-home text-primary mb-4"></i></a>
+                            <a href="/LoginAdmin/Index">
+                                <h5 class="mb-3">Admin Girişi</h5></a>
+                            <p>
+                                <a href="/LoginAdmin/Index">
+                                    Dikkat Admin Değilsen Girme!!</a>
+                                    <br /><br />
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Courses End -->
+    <!-- Footer Start -->
+    @Html.Action("PartialFooter", "Web")
+    <!-- Footer End -->
+    <!-- Back to Top -->
+    @Html.Action("PartialLibrary", "CoursePage")
+</body>
+
+</html>

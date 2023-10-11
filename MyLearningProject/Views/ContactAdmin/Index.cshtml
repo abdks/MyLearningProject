@@ -1,0 +1,87 @@
+﻿@model List<MyLearningProject.DAL.Entities.ContactAdmin>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row page-titles">
+    <div class="col-md-5 col-8 align-self-center">
+        <h3 class="text-themecolor m-b-0 m-t-0">Dashboard</h3>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Anasayfa</a></li>
+            <li class="breadcrumb-item active">@ViewBag.SayfaBasligi</li>
+        </ol>
+    </div>
+    <div class="col-md-7 col-4 align-self-center">
+        <a href="#" class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down">Raporları İndir</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-block">
+                İletişim Sayfası
+                <br />
+                <div class="table-responsive">
+                    <!-- Tabloya responsive sınıf ekledik -->
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>İletişim Başlığı</th>
+                                <th>İletişim Açıklaması</th>
+                                <th>İletişim Adresi</th>
+                                <th>İletişim Numarası</th>
+                                <th>İletişim Maili</th>
+                                <th>Twitter Adresi</th>
+                                <th>Facebook Adresi</th>
+                                <th>Youtube Adresi</th>
+                                <th>Linkedin Adresi</th>
+                                <th>Sil</th>
+                                <th>Güncelle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.Any())
+                            {
+                                int a = 0;
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.ContactID</td>
+                                        <td>@item.ContactTitle</td>
+                                        <td>@item.ContactDescription</td>
+                                        <td>@item.ContactAdress</td>
+                                        <td>@item.ContactPhone</td>
+                                        <td>@item.ContactMail</td>
+                                        <td>@item.ContactTwitter</td>
+                                        <td>@item.ContactFacebook</td>
+                                        <td>@item.ContactYoutube</td>
+                                        <td>@item.ContactLinkedin</td>
+                                        <td><a href="/ContactAdmin/DeleteContactAdmin/@item.ContactID" class="btn btn-outline-danger">Sil</a></td>
+                                        <td><a href="/ContactAdmin/UpdateContactAdmin/@item.ContactID" class="btn btn-outline-success">Güncelle</a></td>
+                                    </tr>
+                                    a++;
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="12">
+                                        <div class="alert alert-danger">
+                                            <h4 class="alert-heading">Dikkat!</h4>
+                                            <p>Hiç Veri Bulunamadı</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <a href="/ContactAdmin/AddContactAdmin" class="btn btn-outline-primary">Yeni Eğitmen Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>

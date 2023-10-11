@@ -1,0 +1,13 @@
+﻿@model  List<MyLearningProject.DAL.Entities.Process>
+@{
+    Layout = "~/Views/InstructorLayout/Index.cshtml";
+    int count = 0;
+}
+
+<h5>Kurs Listeniz</h5>
+@foreach (var item in Model)
+{
+    count++;
+
+    <p>@count   -@item.Course.Title</p>
+}

@@ -1,0 +1,54 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+@Html.Action("PartialHead", "About");
+
+<body>
+
+    <!-- Navbar Start -->
+    @*@Html.Action("PartialNavbar", "AdminLayout")*@
+   @Html.Action("PartialNavbar","About")
+    <!-- Navbar End -->
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">About Us</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">About</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+    <!-- Service Start -->
+    @Html.Action("PartialServices", "About")
+    <!-- Service End -->
+    <!-- About Start -->
+    @Html.Action("PartialAbout", "About")
+    <!-- About End -->
+    <!-- Team Start -->
+    @Html.Action("PartialTestimonial", "About")
+    <!-- Team End -->
+    <!-- Footer Start -->
+    @Html.Action("PartialFooter", "Web")
+    <!-- Footer End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    @Html.Action("PartialScript", "About")
+</body>
+
+</html>

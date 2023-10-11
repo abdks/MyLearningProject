@@ -1,0 +1,28 @@
+﻿@model MyLearningProject.DAL.Entities.Slider
+
+@{
+    ViewBag.Title = "AddSlider";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<h2>Yeni Slider Ekleme Sayfası</h2>
+
+<form method="post">
+    <br />
+
+    <label>Birinci Slider Başlığını Giriniz</label>
+    <input type="text" name="SliderTitle1" class="form-control" />
+    <br />
+    <label>İkinci Slider Başlığını Giriniz</label>
+    <input type="text" name="SliderTitle2" class="form-control" />
+    <br />
+    <label>Slider Açıklaması Giriniz</label>
+    <input type="text" name="SliderDescription" class="form-control" />
+    <label>Slider Resimi Giriniz</label>
+    <input type="text" name="SliderİmageUrl" class="form-control" />
+    <br />
+    <br /><br />
+    <button class="btn btn-primary">Slideri Kaydet</button>
+</form>
+

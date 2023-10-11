@@ -1,0 +1,79 @@
+﻿@model List<MyLearningProject.DAL.Entities.Course>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row page-titles">
+    <div class="col-md-5 col-8 align-self-center">
+        <h3 class="text-themecolor m-b-0 m-t-0">Dashboard</h3>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Anasayfa</a></li>
+            <li class="breadcrumb-item active">@ViewBag.SayfaBasligi</li>
+        </ol>
+    </div>
+    <div class="col-md-7 col-4 align-self-center">
+        <a href="#" class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down">Raporları İndir</a>
+    </div>
+</div>
+
+<h2>Index</h2>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-block">
+                Kurs Listesi
+                <br />
+                <table class="table table-bordered">
+                    <tr>
+                        <th>#</th>
+                        <th>Kurs Adı</th>
+                        <th>Kurs Fiyatı</th>
+                        <th>Kurs Süresi</th>
+                        <th>Kurs Resimi</th>
+                        <th>Kurs Kategorisi</th>
+                        <th>Kurs Eğitmeni</th>
+                        <th>Kurs Açıklaması</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                    </tr>
+                    @{
+                        int a = 0; // Veri sayacını sıfıra ayarla
+                    }
+
+                    @if (Model.Any()) // Model içinde veri varsa
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.CourseID</td>
+                                <td>@item.Title</td>
+                                <td>@item.Price</td>
+                                <td>@item.Duration</td>
+                                <td><img src="@item.ImageUrl"/></td>
+                                <td>@item.Category</td>
+                                <td>@item.Instructor</td>
+                                <td>@item.Description</td>
+                                <td><a href="/Course/DeleteCourse/@item.CourseID" class="btn btn-outline-danger">Sil</a></td>
+                                <td><a href="/Course/UpdateCourse/@item.CourseID" class="btn btn-outline-success">Güncelle</a></td>
+                            </tr>
+                            a++;
+                        }
+                    }
+                    else // Model içinde veri yoksa
+                    {
+
+                        <br />
+                        <div class="alert alert-danger">
+                            <h4 class="alert-heading">Dikkat!</h4>
+                            <p>Hiç Veri Bulunamadı</p>
+                        </div>
+                    }
+
+                </table>
+                <a href="/Course/AddCourse" class="btn btn-outline-primary">Yeni Kategori Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>
